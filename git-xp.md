@@ -1,58 +1,104 @@
-# retour d'experience : git en entreprise
+<!-- 
+Titre : Introducing APIHours
+Date : 03/07/2013
+Événement : APIHour #X
+Auteur : Julien Maupetit
+-->
+
+#### Retour d'experience : git en entreprise
+# De rien à git
+
+----
 
 ## Pierre Tachoire
 
 Développeur web chez ITNetwork
-@krichprollsch
 
-## Le contexte
+[@krichprollsch](https://twitter.com/krichprollsch)
 
+----
+
+# Contexte
+
+---
 ![ITNetwork](http://www.itnetwork.fr/_itn/img/itnetwork.png)
 
-* ITNetwork, agence web / service info
+* Fondée en 1996
+* Agence web => SSII
 
-~15 salariés, 7 dévs, 3 intégrateurs, 1 admin sys
+---
+![ITNetwork](http://www.itnetwork.fr/_itn/img/itnetwork.png)
 
-6 devs sous windows
+* ~15 salariés
+* 7 développeurs
+* 3 intégrateurs
+* 1 admin système
 
-## Une vie avant git ?
+> Dont 6 développeurs sous windows.
 
-mode web agency 
+----
 
-combo ftp + edition en prod
+# Une vie avant git ?
+
+---
+* mode : `web agency`
+* combo `ftp` + edition en prod
 
 > on est réactifs
 
-c'est sûr, mais avec des soucis...
+---
 
-1 projet par personne, chacun code dans son coin, chacun avec ses techniques,
-son style.
+* 1 projet par personne
+* chacun code dans son coin
+* chacun avec ses techniques, son style
+
+---
 
 * pas d'annulation automatique
-* deploiement manuel (quels sont les fichiers à mettre à jour ?)
+* deploiement manuel
 * accès aux espaces web/bdd dispersés 
 * pas de partage de code interne
 
-C'est loin d'être top, mais ça passe encore.
+---
+
+## ça passe encore.
+
+Note: quels sont les fichiers à mettre à jour ? ITNetwork à tenu plus de 10 ans ainsi
+
+---
 
 ## On signe un plus gros projet ?
 
+---
+
 > On va développer en équipe, ça ira plus vite
 
-Création d'un espace de dev "commun" sur un serveur
+---
 
-> je fais le module de gestion des users
-> tu t'occupes des documents
+* Création d'un espace de dev "commun" sur un serveur
+* Comment on règle les conflits ?
 
-> pourquoi tu as touché à ce fichier ?
+---
 
-> qui à écrasé mes 2 semaines de travail ?
+```
+- je fais le module de gestion des users tu t'occupes des documents
+- pourquoi tu as touché à ce fichier ?
+- qui à écrasé mes 2 semaines de travail ?
+```
+
+---
 
 ## On a trouvé une solution ultime
 
+---
+
 [capture word edition des fichiers]
 
-## Arthur, c'est la gueurre !
+---
+
+
+
+![](http://33.media.tumblr.com/tumblr_m8f7q8kgNr1qhxacso1_500.gif)
 
 > les devs cassent tout et se barrent en we
 
@@ -60,103 +106,159 @@ Création d'un espace de dev "commun" sur un serveur
 
 > un dev ne doit pas toucher au serveur
 
-## On doit automatiser les déploiements
+----
+
+# Git ?
+
+---
+
+## Automatiser les déploiements
+---
 
 * impulsion de l'admin sys
 * création d'un projet pilote
-* utilisation d'environnements de dev, de test, de recette, de prod
-* injection de conf : le dev ne doit plus JAMAIS avoir accès aux infos de prod
+* environnements de dev, de test, de recette, de prod
+* injection de conf 
 
-> il est où mon phpmyadmin ?
+---
+ 
+### ne plus *JAMAIS* avoir accès à la prod
 
-Git est la pierre angulaire du process
+---
+
+
+### `Git` : la pierre angulaire du process
+
+----
 
 ## Projet pilote
+
+---
 
 * 1 seul développeur pilote
 * mise en place de deploiements avec admin sys
 * reflexion/documentation
 
-Objectifs :
+---
+
+### Objectifs :
 
 * préparer les choses en amont pour éviter les blocages des
 projets
 * pouvoir faire le support en interne en ayant de l'avance sur l'apprentissage
-sans pour autant maitriser tout git.
+* sans pour autant maitriser tout git.
+
+----
 
 ## Formation et généralisation
 
+---
+
 > c'est rigolo ta ligne de commande...
+
 > mais j'installe quoi comme logiciel sérieusement ?
 
-Une formation est absolument nécessaire.
-On donne des logiciels graphiques, mais on fait passer l'idée que la ligne
-de commande est plus utile.
+---
 
-Ne pas mettre la pression sur les développeurs
+* une formation est nécessaire
+* on donne des logiciels graphiques
+* montrer que la ligne de commande est plus utile
 
-On ne commence que sur les nouveaux projets et on généralise sur les anciens
-petit à petit.
+---
 
-# Les premiers pas avec git
+### Ne pas mettre la pression sur les développeurs
+
+* commencer que sur les nouveaux projets
+* généralisation sur les anciens petit à petit
+
+----
+
+## Les premiers pas avec git
+
+---
 
 ```
 git commit -am 'woot \o/'
 ```
 
-les premiers pas, on est fous-fous.
-Travail individuel tout est ok.
+* les premiers pas, on est fous-fous.
+* Travail individuel tout est ok.
 
-![first step](https://farm1.staticflickr.com/25/59418536_9052eee2a3_z_d.jpg)
+---
 
-On ne se préoccupe ni de workflow ni de l'historique.
+### On ne se préoccupe ni de workflow ni de l'historique.
+
+----
 
 ## Deploiements
+---
 
-Ce sont les développeurs qui déploient.
-Ils ne sont pas dépendants de l'admin sys.
+### On garde la réactivité.
+
+* Ce sont les développeurs qui déploient.
+* Ils sont pas dépendants de l'admin sys.
+
+---
+
+### Introduction de qualité 
 
 * pas de deploiement si les testent echouent
-* système basique de migration de bdd
+* système de migration de bdd
 
-On garde la réactivité.
+----
 
 ## Les branches
 
-Changer de scope pour expliquer la puissance des branches et l'utilité de
-switcher.
+---
+
+Expliquer la puissance des branches et l'utilité de switcher.
+
+---
 
 * on ne mélange plus son travail
 * une tâche par branche
 * on peut faire des essais et se tromper
 * on fait des petits commits
+---
 
-Toujours donner des bonnes pratiques
+### Toujours donner des bonnes pratiques
+
+----
 
 ## Les premiers blocages
 
-Git est verbeux, la solution est dans le message, il faut juste le lire...
+---
 
-Les premiers conflits à gérer sont difficiles.
-Un accompagnement est nécessaire pour rassurer et ne pas se tromper.
 
-Aider les utilisateurs à configurer git, en particulier un mergetool graphique
-pour débuter.
+* Premiers conflits difficiles à gérer
+* Accompagnement nécessaire pour rassurer et ne pas se tromper 
+* Aider à configurer un mergetool graphique
 
-## perte de fichier
+---
 
-> git a supprimé mon fichier !
+Git est verbeux, la solution est très souvent dans le message, il faut juste faire l'effort de le lire...
 
-Analyser avec le développeur l'historique afin de trouver l'explication.
-Comprendre et expliquer ce qui s'est passé et la logique.
+---
 
-*Faire confiance à git*
+### git a supprimé mon fichier !
 
-# On apprend
+---
 
-## on commence un workflow
+* Analyser avec le développeur l'historique
+* Comprendre et expliquer ce qui s'est passé et la logique.
+
+---
+
+### Apprendre à faire confiance à git
+
+----
+
+## Premier workflow
+---
 
 On s'appuie sur [nvie]()
+
+---
 
 * une branche `master` de référence : le développement le plus avancé
 * une branche par fonctionnalité qui est mergée dans `master`
@@ -164,78 +266,101 @@ On s'appuie sur [nvie]()
 * une branche de `production`
 * une branche `hotfix` dérivant de production
 
-## workflow
+---
 
-Fusion dans master en creant un commit de merge
 
-```
-git merge --no-ff dev-1234
-```
+`git merge --no-ff`
 
-Permettre de mieux suivre l'historique des branches dans `master`.
+* Fusion dans master en creant un commit de merge
+* Permettre de mieux suivre l'historique des branches dans `master`.
 
-## workflow
+---
 
 Récupération des hotfixes dans master via `cherry-pick`
 
+----
+
 ## Et les dépendances ?
+
+---
 
 `git submodule`
 
 Utilisé dans quelques projets pilotes pour des dépendances privées.
+
 Abandonné depuis.
+
+---
 
 * utilisation n'est pas toujours bien compris
 * le changement de dépôt est compliqué
 
+---
+
+![getcomposer](https://getcomposer.org/img/logo-composer-transparent.png)
+
 [Composer](http://getcomposer.org) règle le problème dans les projets php en
 offrant plus de souplesse et de simplicité pour le développeur.
 
-## Finalement la ligne de commande c'est pas mal
+----
 
-> à ouais c'est vachement mieux dans ton linux
+> Finalement la ligne de commande c'est pas mal
+
+---
 
 Donner envie d'utiliser git à travers de linux :
-prompt git, couleurs, diff, historique
+
+* prompt git
+* couleurs
+* diff
+* log
+
+----
 
 # Tirer parti de git
 
+---
+
 ## Comprendre le code
 
-Git permet de faciliter la compréhension du code en aidant à répondre
-aux questions :
+---
+
+`git log`
 
 * pourquoi est-ce codé ainsi ?
-* quand est-ce que ça à été fiat/modifié
+* quand est-ce que ça à été fait/modifié
 * qui à travailler dessus ?
 
-```
-git log
-```
-Permettre la communication entre développeurs, faciliter la 
-recherche d'informations, mieux prévoir les impacts d'une 
-modifications.
+---
 
-## trouver et corriger un bug
+* Permettre la communication entre développeurs
+* faciliter la recherche d'informations
+* mieux prévoir les impacts d'une modifications
 
-`git bisect` est un outil ultime pour trouver l'origine d'un bug rapidemment.
+---
+
+`git bisect` 
+
+* outil ultime pour trouver l'origine d'un bug rapidemment.
+
+----
 
 ## On fait encore des erreurs
 
+---
+
+`git push -f`
+
 > j'annule juste une modifs
 
-```
-git push -f
-```
+* Expliquer les cas possibles
+* Pas toujours bien compris et trop souvent trouvé sur le net.
 
-Expliquer dans quel cas c'est possible et dans quels cas ce ne l'est pas.
-Pas toujours bien compris et trop souvent trouvé sur le net.
-
-> si git me le permet, c'est que c'est safe
-
-Un grand pouvoir nécessite de grandes responsabilités.
+----
 
 ## le serveur pirate
+
+---
 
 Tirer parti de la souplesse de git pour faire des essais, valider des outils.
 
